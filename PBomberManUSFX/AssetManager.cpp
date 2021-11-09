@@ -32,7 +32,7 @@
             Mix_VolumeChunk(explosionSound.get(), 35);
         }
     }
-
+        
     std::shared_ptr<TTF_Font> AssetManager::getFont() const
     {
         return font;
@@ -56,7 +56,7 @@
     void AssetManager::loadFont()
     {
         // load font
-        font = std::shared_ptr<TTF_Font>(TTF_OpenFont("resources/font.ttf", 32), TTF_CloseFont);
+        font = std::shared_ptr<TTF_Font>(TTF_OpenFont("resources/bomberman.ttf", 32), TTF_CloseFont);
         if (!font)
         {
             std::cout << "TTF_OpenFont Error: " << TTF_GetError() << std::endl;

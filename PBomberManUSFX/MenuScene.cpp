@@ -58,17 +58,17 @@ MenuItem& operator++(MenuItem& c)
         //error en addObject 
 
         //titulo bomberman
-        auto bmText = std::make_shared<Text>(game->getAssetManager()->getFont(), game->getRenderer(), " BOMBERMAN      ");
+        auto bmText = std::make_shared<Text>(game->getAssetManager()->getFont(), game->getRenderer(), "BOMBERMAN");
         bmText->setColor({ 27, 153, 139, 255 });
-        bmText->setSize(1200, 185);
-        bmText->setPosition(30, 20);
+        bmText->setSize(800, 74);
+        bmText->setPosition(30, 50);
         addObject(bmText);
 
         //titulo USFX
-        auto usfxText = std::make_shared<Text>(game->getAssetManager()->getFont(), game->getRenderer(), "  USFX        ");
+        auto usfxText = std::make_shared<Text>(game->getAssetManager()->getFont(), game->getRenderer(), "  USFX         ");
         usfxText->setColor({ 138, 197, 197, 255 });
         usfxText->setSize(1200, 185);
-        usfxText->setPosition(100, 200);
+        usfxText->setPosition(100, 150);
         addObject(usfxText);
         
        
