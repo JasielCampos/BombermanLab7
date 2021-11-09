@@ -43,7 +43,7 @@
         std::string text;                         // text to display
         SDL_Color color = { 255, 255, 255, 255 };   // color of text
         //-------------------------------------------------------------------------------------------
-        SDL_Renderer* renderer = nullptr;               // SDL2 renderer
-        std::shared_ptr<SDL_Texture> texture = nullptr; // SDL2 texture
-        SDL_Rect clip;                                  // what part of texture to draw on the screen
+        //SDL_Renderer* renderer = nullptr;               // SDL2 renderer
+        //std::shared_ptr<SDL_Texture> texture = nullptr; // SDL2 texture
+        //SDL_Rect clip;                                  // what part of texture to draw on the screen
     };
