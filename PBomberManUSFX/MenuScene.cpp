@@ -1,10 +1,12 @@
 #include <string>
+#include <iostream>
 
 #include "Sprite.h"
 #include "GameManager.h"
 //#include "../Scenes/GameOverScene.h"
 //#include "../Scenes/LevelScene.h"
 #include "MenuScene.h"
+
 
 
 
@@ -54,6 +56,22 @@ MenuItem& operator++(MenuItem& c)
             static_cast<int>(game->getWindowHeight() / 1.5f) - 20);
         addObject(background);
         //error en addObject 
+
+        //titulo bomberman
+        auto bmText = std::make_shared<Text>(game->getAssetManager()->getFont(), game->getRenderer(), " BOMBERMAN      ");
+        bmText->setColor({ 27, 153, 139, 255 });
+        bmText->setSize(1200, 185);
+        bmText->setPosition(30, 20);
+        addObject(bmText);
+
+        //titulo USFX
+        auto usfxText = std::make_shared<Text>(game->getAssetManager()->getFont(), game->getRenderer(), "  USFX        ");
+        usfxText->setColor({ 138, 197, 197, 255 });
+        usfxText->setSize(1200, 185);
+        usfxText->setPosition(100, 200);
+        addObject(usfxText);
+        
+       
 
         // start menu
         startText = std::make_shared<Text>(game->getAssetManager()->getFont(), game->getRenderer(), "START");
