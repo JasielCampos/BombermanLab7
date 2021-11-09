@@ -2,13 +2,13 @@
 
 #include <SDL_ttf.h>
 
-#include "GameObject.h"
+#include "Object.h"
 
     /**
      * @brief Text object
      *
      */
-    class Text : public GameObject
+    class Text : public Object
     {
     public:
         /**

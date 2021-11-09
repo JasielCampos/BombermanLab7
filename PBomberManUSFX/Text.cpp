@@ -3,7 +3,7 @@
 #include "Text.h"
 
     Text::Text(std::shared_ptr<TTF_Font> _font, SDL_Renderer* _renderer, const std::string& _text)
-        : GameObject()
+: Object(_renderer)
     {
         this->font = _font;
         this->text = _text;

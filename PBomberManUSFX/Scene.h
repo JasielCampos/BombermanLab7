@@ -3,9 +3,9 @@
 #include <SDL.h>
 #include <vector>
 
-#include "GameObject.h"     // En el otro es Object.h
+#include "Object.h"     // En el otro es Object.h
 
-    class GameManager;
+    class Game;
     /**
      * @brief Scene base class
      *
@@ -18,7 +18,7 @@
          *
          * @param game - pointer to game
          */
-        Scene(GameManager* game);
+        Scene(Game* game);
         /**
          * @brief Destroy the Scene object
          *
@@ -29,20 +29,20 @@
          *
          * @param object
          */
-        void addObject(std::shared_ptr<GameObject> object);
+        void addObject(std::shared_ptr<Object> object);
         /**
          * @brief Add object to scene for drawing to specific position
          *
          * @param object
          * @param position - position where to insert object
          */
-        void insertObject(std::shared_ptr<GameObject> object, int position);
+        void insertObject(std::shared_ptr<Object> object, int position);
         /**
          * @brief Remove object from scene
          *
          * @param object
          */
-        void removeObject(std::shared_ptr<GameObject> object);
+        void removeObject(std::shared_ptr<Object> object);
         /**
          * @brief Set the Camera object to specific position
          *
@@ -83,10 +83,10 @@
         void draw(SDL_Rect& _camera) const;
 
     protected:
-        GameManager* game = nullptr; // pointer to game for use in all scenes
+        Game* game = nullptr; // pointer to game for use in all scenes
 
     private:
-        std::vector<std::shared_ptr<GameObject>> objects; // objects to update and draw
+        std::vector<std::shared_ptr<Object>> objects; // objects to update and draw
         //SDL_Rect& camera;                              // camera position
     };
 

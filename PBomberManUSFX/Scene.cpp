@@ -3,7 +3,7 @@
 #include "Scene.h"
 
 
-    Scene::Scene(GameManager* _game)
+    Scene::Scene(Game* _game)
     {
         this->game = _game;
         // set camera to up-left position
@@ -12,17 +12,17 @@
 
     Scene::~Scene() {}
 
-    void Scene::addObject(std::shared_ptr<GameObject> object)
+    void Scene::addObject(std::shared_ptr<Object> object)
     {
         objects.push_back(std::move(object));
     }
 
-    void Scene::insertObject(std::shared_ptr<GameObject> object, int position)
+    void Scene::insertObject(std::shared_ptr<Object> object, int position)
     {
         objects.insert(objects.begin() + position, object);
     }
 
-    void Scene::removeObject(std::shared_ptr<GameObject> object)
+    void Scene::removeObject(std::shared_ptr<Object> object)
     {
         objects.erase(std::remove(objects.begin(), objects.end(), object), objects.end());
     }
@@ -51,6 +51,6 @@
     {
         for (const auto& object : objects)
         {
-            object->render(_camera);
+            object->draw(_camera);
         }
     }
