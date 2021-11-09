@@ -100,6 +100,7 @@ bool GameManager::loadContent()
 	sceneManager->addScene("menu", std::make_shared<MenuScene>(this));
 	sceneManager->activateScene("menu");
 
+
 	//-------------------------------------------------------------------------------------------------
 
 
@@ -190,20 +191,52 @@ int GameManager::onExecute() {
 	}
 
 	//While application is running
-	while (enEjecucion)
-	{
-		//Handle events on queue
-		while (SDL_PollEvent(&evento) != 0)
-		{
-			onEvent(&evento);
-		}
+	//while (enEjecucion)
+	//{
+	//	//Handle events on queue
+	//	while (SDL_PollEvent(&evento) != 0)
+	//	{
+	//		onEvent(&evento);
+	//	}
 
-		onLoop();
-		onRender();
-	}
+	//	onLoop();
+	//	onRender();
+	//}
 
 	//Free resources and close SDL
-	close();
+	/*close();*/
+
+	SDL_Event event;
+
+	while (isRunning)
+	{
+		// check SDL2 events
+		while (SDL_PollEvent(&event))
+		{
+			// send event to current scene
+			sceneManager->onEvent(event);
+			// stop loop on quit
+			if (event.type == SDL_QUIT)
+			{
+				stop();
+			}
+		}
+
+		// calculate delta
+		Uint32 tickTime = SDL_GetTicks();
+		Uint32 delta = tickTime - lastTickTime;
+		lastTickTime = tickTime;
+		// update current scene
+		sceneManager->update(delta);
+
+		// clear the screen
+		SDL_SetRenderDrawColor(gRenderer, 0x00, 0x00, 0x00, 0x00);
+		SDL_RenderClear(gRenderer);
+		// draw current scene
+		sceneManager->draw(camera);
+		// flip the backbuffer
+		SDL_RenderPresent(gRenderer);
+	}
 
 	std::cout << "Numero de objetos en el vector: " << actoresJuego.size() << std::endl;
 	std::cout << "Numero de objetos creados:" << GameObject::numeroGameObjectCreados << std::endl;
