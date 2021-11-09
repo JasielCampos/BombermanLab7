@@ -104,17 +104,18 @@ bool GameManager::loadContent()
 	//-------------------------------------------------------------------------------------------------
 
 
-	tilesGraphGM = new TilesGraph(25, 15, 850, 510);
+	/*tilesGraphGM = new TilesGraph(25, 15, 850, 510);
 	GameActor::tilesGraph = tilesGraphGM;
 
 	generadorMapa = new MapGenerator(gRenderer, SCREEN_WIDTH, SCREEN_HEIGHT, tilesGraphGM);
 	generadorMapa->crearObjetosJuego("resources/level1.txt");
-	generadorMapa->transferirObjetosJuego(actoresJuego);
+	generadorMapa->transferirObjetosJuego(actoresJuego);*/
 	                               
-	if (actoresJuego.size() > 0)
+	/*if (actoresJuego.size() > 0)
 		return true;
 
-	return false;
+	return false;*/
+	return true;
 }
 
 void GameManager::onEvent(SDL_Event* _event)
@@ -204,7 +205,7 @@ int GameManager::onExecute() {
 	//}
 
 	//Free resources and close SDL
-	/*close();*/
+	///*close();*/
 
 	SDL_Event event;
 
@@ -273,4 +274,29 @@ SceneManager* GameManager::getSceneManager() const
 AssetManager* GameManager::getAssetManager() const
 {
 	return assetManager;
+}
+
+void GameManager::mapa()
+{
+	tilesGraphGM = new TilesGraph(25, 15, 850, 510);
+	GameActor::tilesGraph = tilesGraphGM;
+
+	generadorMapa = new MapGenerator(gRenderer, SCREEN_WIDTH, SCREEN_HEIGHT, tilesGraphGM);
+	generadorMapa->crearObjetosJuego("resources/level1.txt");
+	generadorMapa->transferirObjetosJuego(actoresJuego);
+
+
+		while (enEjecucion)
+		{
+			//Handle events on queue
+			while (SDL_PollEvent(&evento) != 0)
+			{
+				onEvent(&evento);
+			}
+
+			onLoop();
+			onRender();
+		}
+
+	close();
 }

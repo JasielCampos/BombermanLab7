@@ -9,7 +9,7 @@
         // load font
         loadFont();
         // load textures
-        loadTexture(renderer, Texture::MenuBack, "resources/menu_title.png");
+        loadTexture(renderer, Texture::MenuBack, "resources/menu.jpg");
         //loadTexture(renderer, Texture::Stone, "assets/stone.png");
         //loadTexture(renderer, Texture::Grass, "assets/grass.png");
         //loadTexture(renderer, Texture::Brick, "assets/brick.png");

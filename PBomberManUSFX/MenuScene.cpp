@@ -144,6 +144,11 @@ MenuItem& operator++(MenuItem& c)
             // go to level scene
             //game->getSceneManager()->addScene("stage", std::make_shared<StageScene>(game, 1, 0));
             //game->getSceneManager()->activateScene("stage");
+
+            //game->getSceneManager()->removeScene("menu");
+            menuMusic->stop();
+            game->mapa();
+            game->stop();
             break;
         case MenuItem::Exit:
             // stop game loop

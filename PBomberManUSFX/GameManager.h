@@ -81,4 +81,5 @@ public:
     SDL_Renderer* getRenderer() const;
     SceneManager* getSceneManager() const;
     AssetManager* getAssetManager() const;
+    void mapa();
 };
