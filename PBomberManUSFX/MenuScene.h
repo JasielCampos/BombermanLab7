@@ -32,7 +32,7 @@
          *
          * @param game
          */
-        MenuScene(Game* game);
+        MenuScene(GameManager* game);
         /**
          * @brief Called when scene was activated
          *

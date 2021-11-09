@@ -3,7 +3,7 @@
 #include "Scene.h"
 
 
-    Scene::Scene(Game* _game)
+    Scene::Scene(GameManager* _game)
     {
         this->game = _game;
         // set camera to up-left position

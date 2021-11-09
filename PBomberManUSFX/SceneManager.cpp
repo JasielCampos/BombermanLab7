@@ -5,7 +5,7 @@
 
     SceneManager::SceneManager() {}
 
-    void SceneManager::addScene(const std::string& name, Scene* scene)
+    void SceneManager::addScene(const std::string& name, const std::shared_ptr<Scene> scene)
     {
         const auto it = scenes.find(name);
         if (it != scenes.end() && it->second)

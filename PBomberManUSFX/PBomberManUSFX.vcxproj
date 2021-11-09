@@ -148,7 +148,6 @@
     <ClCompile Include="Detonador.cpp" />
     <ClCompile Include="Enemigo.cpp" />
     <ClCompile Include="Explosion.cpp" />
-    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameActor.cpp" />
     <ClCompile Include="GameDirecctions.h" />
     <ClCompile Include="GameManager.cpp" />
@@ -165,7 +164,6 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="StageScene.cpp" />
     <ClCompile Include="SueloCesped.cpp" />
     <ClCompile Include="system\KeyboardInput.cpp" />
     <ClCompile Include="Text.cpp" />
@@ -180,7 +178,6 @@
     <ClInclude Include="Detonador.h" />
     <ClInclude Include="Enemigo.h" />
     <ClInclude Include="Explosion.h" />
-    <ClInclude Include="Game.h" />
     <ClInclude Include="GameActor.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameObject.h" />
@@ -196,7 +193,6 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Sprite.h" />
-    <ClInclude Include="StageScene.h" />
     <ClInclude Include="SueloCesped.h" />
     <ClInclude Include="system\KeyboardInput.h" />
     <ClInclude Include="Text.h" />

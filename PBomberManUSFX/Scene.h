@@ -5,7 +5,7 @@
 
 #include "Object.h"     // En el otro es Object.h
 
-    class Game;
+    class GameManager;
     /**
      * @brief Scene base class
      *
@@ -18,7 +18,7 @@
          *
          * @param game - pointer to game
          */
-        Scene(Game* game);
+        Scene(GameManager* game);
         /**
          * @brief Destroy the Scene object
          *
@@ -83,7 +83,7 @@
         void draw(SDL_Rect& _camera) const;
 
     protected:
-        Game* game = nullptr; // pointer to game for use in all scenes
+        GameManager* game = nullptr; // pointer to game for use in all scenes
 
     private:
         std::vector<std::shared_ptr<Object>> objects; // objects to update and draw

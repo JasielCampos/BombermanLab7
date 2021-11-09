@@ -1,11 +1,11 @@
 #include <string>
 
 #include "Sprite.h"
-#include "Game.h"
+#include "GameManager.h"
 //#include "../Scenes/GameOverScene.h"
 //#include "../Scenes/LevelScene.h"
 #include "MenuScene.h"
-#include "StageScene.h"
+
 
 
     // ++increment for menu id
@@ -44,7 +44,7 @@ MenuItem& operator++(MenuItem& c)
         return result;
     }
 
-    MenuScene::MenuScene(Game* _game) : Scene(_game)
+    MenuScene::MenuScene(GameManager* _game) : Scene(_game)
     {
         // background
         auto background = std::make_shared<Sprite>(game->getAssetManager()->getTexture(Texture::MenuBack),
@@ -142,8 +142,8 @@ MenuItem& operator++(MenuItem& c)
         {
         case MenuItem::Start:
             // go to level scene
-            game->getSceneManager()->addScene("stage", std::make_shared<StageScene>(game, 1, 0));
-            game->getSceneManager()->activateScene("stage");
+            //game->getSceneManager()->addScene("stage", std::make_shared<StageScene>(game, 1, 0));
+            //game->getSceneManager()->activateScene("stage");
             break;
         case MenuItem::Exit:
             // stop game loop

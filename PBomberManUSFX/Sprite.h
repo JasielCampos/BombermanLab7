@@ -4,13 +4,14 @@
 #include <memory>
 #include <vector>
 #include "Animation.h"
+#include "Object.h"
 
 /**
     * @brief Sprite object - for drawable objects
     *
 */
 
-class Sprite 
+class Sprite : public Object
 {
 protected:
     SDL_Renderer* renderer = nullptr;               // SDL2 renderer

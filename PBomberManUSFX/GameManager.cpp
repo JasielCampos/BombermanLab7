@@ -1,9 +1,10 @@
-#include "GameManager.h"
 #include <SDL_image.h>
 #include <SDL_mixer.h>
 #include <SDL_ttf.h>
 
 #include <iostream>
+#include "GameManager.h"
+#include "MenuScene.h"
 
 
 GameManager::GameManager() {
@@ -96,8 +97,8 @@ bool GameManager::loadContent()
 
 	assetManager->load(gRenderer);
 	// create menu scene
-	//sceneManager->addScene("menu", std::make_shared<MenuScene>(this));
-	//sceneManager->activateScene("menu");
+	sceneManager->addScene("menu", std::make_shared<MenuScene>(this));
+	sceneManager->activateScene("menu");
 
 	//-------------------------------------------------------------------------------------------------
 

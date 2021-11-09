@@ -1,7 +1,7 @@
 #include "Sprite.h"
 
 
-Sprite::Sprite(std::shared_ptr<SDL_Texture> _texture, SDL_Renderer* _renderer)
+Sprite::Sprite(std::shared_ptr<SDL_Texture> _texture, SDL_Renderer* _renderer) : Object(_renderer)
 {
     //texture = _texture;
     this->texture = _texture;
