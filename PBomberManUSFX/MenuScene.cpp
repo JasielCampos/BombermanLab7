@@ -53,6 +53,7 @@ MenuItem& operator++(MenuItem& c)
         background->setSize(game->getWindowWidth() - 60,
             static_cast<int>(game->getWindowHeight() / 1.5f) - 20);
         addObject(background);
+        //error en addObject 
 
         // start menu
         startText = std::make_shared<Text>(game->getAssetManager()->getFont(), game->getRenderer(), "START");
