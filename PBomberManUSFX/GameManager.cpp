@@ -278,6 +278,9 @@ AssetManager* GameManager::getAssetManager() const
 
 void GameManager::mapa()
 {
+	levelMusic = std::make_shared<Music>(assetManager->getMusic(MusicEnum::Level));
+	levelMusic->play();
+
 	tilesGraphGM = new TilesGraph(25, 15, 850, 510);
 	GameActor::tilesGraph = tilesGraphGM;
 

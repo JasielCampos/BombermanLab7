@@ -17,6 +17,7 @@
 //-------------------------------------------------------------------------------------------------
 #include "SceneManager.h"
 #include "AssetManager.h"
+#include "Music.h"
 #include <memory>
 //-------------------------------------------------------------------------------------------------
 using namespace std;
@@ -29,6 +30,8 @@ private:
     //Lo que añadí
     SceneManager* sceneManager = nullptr; // scene manager
     AssetManager* assetManager = nullptr; // asset manager
+    std::shared_ptr<Music> levelMusic = nullptr;
+
     bool isRunning;
 
     int SCREEN_WIDTH = 850;
